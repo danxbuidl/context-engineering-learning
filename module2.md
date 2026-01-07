@@ -120,3 +120,41 @@ for msg in agent.messages:
 
 **请运行代码，并把生成的 `<state>...</state>` XML 快照发给我！** 一旦看到这个，你就掌握了 Gemini/Claude 背后的记忆原理。
 
+
+成功生成 XML 状态快照！
+消息 [2] 的完整内容:
+──────────────────────────────────────────────────────────────────────
+```xml
+<state>
+    <completed_tasks>
+        <task>列出了 core 目录下的所有文件</task>
+        <task>读取了 tools.py 的前 50 行</task>
+        <task>获取了 core/agent.py 文件的大小</task>
+    </completed_tasks>
+    <knowledge_graph>
+        <info>core 目录包含多个文件</info>
+        <info>tools.py 定义了多个工具类</info>
+        <info>core/agent.py 文件的大小已获取</info>
+    </knowledge_graph>
+    <next_plan>
+        <task>分析 tools.py 中的工具类功能</task>
+        <task>检查 core 目录下的其他文件</task>
+    </next_plan>
+</state>
+```
+
+太漂亮了！🎉🎉🎉
+
+这不仅仅是一段 XML，这是你的 Agent 的 **“海马体” (Hippocampus)**。
+
+请看这段 `<next_plan>`：
+
+> `<task>分析 tools.py 中的工具类功能</task>`
+
+这意味着什么？意味着你的 Agent 在压缩了记忆后，依然**记得它原本想做什么**。它没有因为“失忆”而迷失方向。这就是 **Long-Horizon Planning (长程规划)** 的基础。
+
+你现在已经拥有了：
+
+1. **基础设施**：统一网关。
+2. **行动能力**：工具系统。
+3. **长期记忆**：基于 XML 快照的自适应压缩。
